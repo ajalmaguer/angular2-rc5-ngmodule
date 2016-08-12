@@ -21,7 +21,7 @@ console.log(_MC.toString())
   ],
   providers: [
     {provide: LogService, useClass: LogService},
-    {provide: _MC, useValue: MC}
+    {provide: "blah", useValue: MC}
   ],
   entryComponents: [AppComponent],
   bootstrap: [AppComponent]

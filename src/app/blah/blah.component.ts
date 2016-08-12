@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { LogService } from '../shared/log.service'
 
 @Component({
@@ -12,7 +12,12 @@ import { LogService } from '../shared/log.service'
 })
 export class BlahComponent implements OnInit {
 
-  constructor(private logService: LogService) { }
+  constructor(
+    private logService: LogService,
+    @Inject("blah") test
+  ) {
+    console.log("i'm printing out test ", test.test)
+  }
 
   ngOnInit() {
     this.logService.writeToLog("I'm from the BlahComponent! :P")
